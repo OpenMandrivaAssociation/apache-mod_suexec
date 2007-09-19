@@ -6,7 +6,7 @@
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
 Version:	2.2.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/docs/suexec.html
@@ -65,7 +65,7 @@ gcc `%{_sbindir}/apxs -q CFLAGS -Wall` -D_REENTRANT -D_GNU_SOURCE -D_LARGEFILE_S
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-install -d %{buildroot}%{_libdir}/apache-extramodules
+install -d %{buildroot}%{_libdir}/apache
 install -d %{buildroot}%{_sysconfdir}/httpd/modules.d
 install -d %{buildroot}%{_sbindir}
 install -d %{buildroot}%{_mandir}/man8
@@ -73,7 +73,7 @@ install -d %{buildroot}%{_mandir}/man8
 install -m0755 suexec %{buildroot}%{_sbindir}/suexec
 install suexec.8 %{buildroot}%{_mandir}/man8/suexec.8
 
-install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache-extramodules/
+install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache/
 install -m0644 %{mod_conf} %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
 
 
@@ -120,6 +120,6 @@ fi
 %defattr(-,root,root)
 %doc mod_suexec.html suexec.html README.MDK
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
-%attr(0755,root,root) %{_libdir}/apache-extramodules/%{mod_so}
+%attr(0755,root,root) %{_libdir}/apache/%{mod_so}
 %attr(4710,root,apache) %{_sbindir}/suexec
 %{_mandir}/man8/*
