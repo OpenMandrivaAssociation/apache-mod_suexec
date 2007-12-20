@@ -19,6 +19,7 @@ Requires:	apache-conf >= %{version}
 Requires:	apache >= %{version}
 BuildRequires:  apache-devel >= %{version}
 BuildRequires:  apache-source >= %{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This module, in combination with the suexec support program
