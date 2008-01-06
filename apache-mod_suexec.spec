@@ -33,8 +33,8 @@ same user who is running the web server.
 %setup -c -T -n %{name}
 
 cp %{_includedir}/apache/*.h .
-cp `apr-1-config --includedir`/* .
-cp `apu-1-config --includedir`/* .
+cp -rp `apr-1-config --includedir`/* .
+cp -rp `apu-1-config --includedir`/* .
 
 echo "#define AP_GID_MIN 100"  >> ap_config_auto.h
 echo "#define AP_UID_MIN 100"  >> ap_config_auto.h
