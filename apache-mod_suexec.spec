@@ -6,7 +6,7 @@
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
 Version:	2.2.8
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/docs/suexec.html
@@ -19,7 +19,7 @@ Requires:	apache-conf >= %{version}
 Requires:	apache >= %{version}
 BuildRequires:  apache-devel >= %{version}
 BuildRequires:  apache-source >= %{version}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This module, in combination with the suexec support program
