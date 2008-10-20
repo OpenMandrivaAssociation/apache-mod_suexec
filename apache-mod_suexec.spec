@@ -5,7 +5,7 @@
 
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
-Version:	2.2.9
+Version:	2.2.10
 Release:	%mkrel 1
 Group:		System/Servers
 License:	Apache License
@@ -63,7 +63,7 @@ gcc `%{_sbindir}/apxs -q CFLAGS -Wall` -D_REENTRANT -D_GNU_SOURCE -D_LARGEFILE_S
 %{_sbindir}/apxs -I. -c %{mod_name}.c
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/apache
 install -d %{buildroot}%{_sysconfdir}/httpd/modules.d
@@ -114,7 +114,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
