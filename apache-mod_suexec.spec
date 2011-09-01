@@ -5,7 +5,7 @@
 
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
-Version:	2.2.19
+Version:	2.2.20
 Release:	%mkrel 1
 Group:		System/Servers
 License:	Apache License
