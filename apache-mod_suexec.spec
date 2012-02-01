@@ -1,3 +1,12 @@
+%if %mandriva_branch == Cooker
+# Cooker
+%define release %mkrel 1
+%else
+# Old distros
+%define subrel 1
+%define release %mkrel 0
+%endif
+
 %define mod_name mod_suexec
 %define mod_conf 69_%{mod_name}.conf
 %define mod_so %{mod_name}.so
@@ -5,8 +14,8 @@
 
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
-Version:	2.2.21
-Release:	%mkrel 1
+Version:	2.2.22
+Release:	%release
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/docs/suexec.html
