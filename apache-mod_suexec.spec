@@ -14,7 +14,7 @@
 
 Summary:	Allows CGI scripts to run as a specified user and Group
 Name:		apache-%{mod_name}
-Version:	2.4.2
+Version:	2.4.3
 Release:	%release
 Group:		System/Servers
 License:	Apache License
