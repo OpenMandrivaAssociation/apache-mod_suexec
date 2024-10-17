@@ -18,7 +18,7 @@ Version:	2.4.3
 Release:	%release
 Group:		System/Servers
 License:	Apache License
-URL:		http://httpd.apache.org/docs/suexec.html
+URL:		https://httpd.apache.org/docs/suexec.html
 Source1:	%{mod_conf}
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
